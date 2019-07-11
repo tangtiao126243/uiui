@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN">
+
+<mapper namespace="com.dao.StudentDAO">
+<insert id="add" parameterType="com.pojo.Student">
+insert into student (sname) values(#{sname})
+</insert>
+<select id="findById" parameterType="int" resultType="com.pojo.Student">
+select sid,sname from student where sid=#{value}
+</select>
+<select id="findAll" resultType="com.pojo.Student">
+select sid,sname from student
+</select>
+<delete id="delete"></delete>
+<update id="update"></update>
+</mapper>
+    <!--<sql id="f">sid,sname</sql>-->
+
+    <!--<select id="findall" resultType="stu">-->
+        <!--select<include refid="f" /> from student-->
+
+    <!--</select>-->
+
+
